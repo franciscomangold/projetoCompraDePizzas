@@ -29,6 +29,12 @@ pizzaJson.map((item, index)=>{  // recebendo item(cada pizza), e o index(posiç�
     // Adicionando o nome das pizzas
     pizzaItem.querySelector('.pizza-item--name').innerHTML = item.name;
 
+    // Adicionando a descrição das pizzas
+    pizzaItem.querySelector('.pizza-item--desc').innerHTML = item.description;
+
+    // Adicionando o preço das pizzas
+    pizzaItem.querySelector('.pizza-item--price').innerHTML = `R$ ${item.price.toFixed(2)}`; // toFixed(2) é para fixar 2 algarismos depoi da virgula ou ponto, para que os valores fiquem padrão(se não tiver vai ficar dois zeros).
+
     c('.pizza-area').append(pizzaItem); // Adicionando elemento(el)
 });
 
