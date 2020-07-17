@@ -39,6 +39,21 @@ pizzaJson.map((item, index)=>{  // recebendo item(cada pizza), e o index(posiç�
     // Adicionando a descrição das pizzas
     pizzaItem.querySelector('.pizza-item--desc').innerHTML = item.description;
 
+
+    // Acessando a tag link 'a' para concelar o evento original e adicionar a pizza escolhida
+
+    pizzaItem.querySelector('a').addEventListener('click', (e)=>{
+
+        e.preventDefault();  // Bloqueando a ação padrão do click que é a atualização da página
+        //console.log('Clicou em uma pizza'); // Mostrando mensagem a cada clic, só para testar.
+
+        // Modal, janela que mostra uma mensagem de informações da piza escolhida
+        c('.pizzaWindowArea').style.opacity = 0;        // Setando efeito opacidade do Modal, colocando em zero para que não apareça.
+        c('.pizzaWindowArea').style.display = 'flex';   // Colocando display = 'flex' em Modal "pizzaWindowArea" (tela que aparece quando clicar em alguma pizza).
+        setTimeout(()=>{
+            c('.pizzaWindowArea').style.opacity = 5;    // Setando efeito opacidade do Modal, colocando em cinco para que demore um pouco para aparecer.
+        }, 200); // Esperando esse tempo  200ms, para colocar opacidade = 5;
+    })
   
 
     c('.pizza-area').append(pizzaItem); // Adicionando elemento(el)
